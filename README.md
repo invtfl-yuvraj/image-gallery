@@ -12,7 +12,7 @@ Welcome to the Image Gallery Website project! This is my first project using HTM
 
 ## Demo
 
-[Will be updated soon....]
+https://invtfl-yuvraj.github.io/image-gallery/
 
 ## Features
 
