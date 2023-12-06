@@ -11,6 +11,7 @@ Welcome to the Image Gallery Website project! This is my first project using HTM
 - [Installation](#installation)
 - [Usage](#usage)
 - [Contributing](#contributing)
+- [Acknowledgement](#acknowledgement)
 
 ## Demo
 
@@ -47,5 +48,10 @@ If you'd like to contribute to this project, please follow these steps:
 2. Create a new branch for your feature or bug fix.
 3. Make your changes and submit a pull request.
 
+## Acknowledgement
+1. Thanks to Love Babbar for proving this Project Idea.
+2. Images used is this project are provided by Love Babbar in his Web Development Bootcamp [MERN STACK] course.
 
-## This project is a part of my learning journey in web development. If you have any questions or suggestions, feel free to open an issue or reach out to me. Thank you for checking out my first project!
+Although I build this whole project myself from scratch after learning the concepts.
+
+This project is a part of my learning journey in web development. If you have any questions or suggestions, feel free to open an issue or reach out to me. Thank you for checking out my first project!
