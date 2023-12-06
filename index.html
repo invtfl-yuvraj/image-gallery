@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image Gallery</title>
+    <link rel="stylesheet" href="./sass/style.css">
+</head>
+
+<body>
+
+    <!-- Navigation Bar -->
+    <section class="navSection">
+        <header>
+            <nav class="nav">
+                <div class="logo">
+                    <img src="./assets/logo/logo_img_gallery.svg" class="m_logo" alt="">
+                </div>
+
+                <input type="checkbox" id="check">
+                <label for="check" class="hamburger">
+                    <div class="bar"></div>
+                </label>
+
+                <div class="nav_items">
+                    <ul>
+                        <li>
+                            <a href="./index.html">Home</a>
+                        </li>
+                        <li>
+                            <a href="">About</a>
+                        </li>
+                        <li>
+                            <a href="">Gallery</a>
+                        </li>
+                        <li>
+                            <a href="">Projets</a>
+                        </li>
+
+                        <li>
+                            <a href="https://www.linkedin.com/in/yuvrajsingh23/"><button class="btn">Contact</button></a>
+                        </li>
+
+                    </ul>
+                </div>
+            </nav>
+        </header>
+    </section>
+
+
+
+    <!-- Image Gallery -->
+
+    <section class="img_gallery">
+        <h1 class="heading">MY IMAGE GALLERY</h1>
+        <div class="container">
+            <img class="img" src="./assets/image1.jpg" alt="">
+            <img class="img" src="./assets/image2.jpeg" alt="">
+            <img class="img" src="./assets/image3.jpeg" alt="">
+            <img class="img" src="./assets/image4.jpeg" alt="">
+            <img class="img" src="./assets/image5.jpeg" alt="">
+            <img class="img" src="./assets/image6.jpeg" alt="">
+            <img class="img" src="./assets/image7.jpeg" alt="">
+            <img class="img" src="./assets/image8.jpeg" alt="">
+            <img class="img" src="./assets/image9.jpeg" alt="">
+        </div>
+    </section>
+
+
+
+    <!-- Javascript for navbar -->
+
+    <script type=text/javascript>
+    window.addEventListener("scroll", function(){
+        let headerSec = document.querySelector(".navSection");
+        headerSec.classList.toggle("sticky", window.scrollY > 20);
+
+        let header = document.querySelector("header");
+        header.classList.toggle("stickyHeader", window.scrollY > 20);
+    })
+    
+    
+    </script>
+</body>
+
+</html>

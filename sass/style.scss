@@ -1,0 +1,397 @@
+$bg-color: rgb(69, 69, 69);
+$faded-bg-color : rgba(250, 235, 215, 0.327);
+$text-color : aquamarine;
+$hover-text-color : yellow;
+
+/* 
+
+
+NOTE : Refer scss file for better understanding of css code along with comments
+
+
+*/
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: poppins, sans-serif;
+}
+
+body {
+    background-color: $bg-color;
+    scroll-behavior: smooth;
+
+    &::-webkit-scrollbar {
+        background-color: $faded-bg-color;
+    }
+
+    &::-webkit-scrollbar-thumb {
+        background-color: $text-color;
+        border-radius: 15px;
+    }
+}
+
+
+
+// Navigation section starts from here
+
+.navSection {
+    position: fixed;
+    width: 100%;
+    height: 3.78rem;
+    margin: 0;
+    top: 0;
+    z-index: 9;
+    background-color: none;
+
+    @media (max-width : 950px) {
+        height: 3.6rem;
+    }
+}
+
+header {
+    position: fixed;
+    width: 100%;
+    padding: 0.7rem 1rem 0.7rem 1rem;
+    margin: 0;
+    top: 0;
+    z-index: 10;
+    transition: 300ms ease;
+
+    @media (max-width : 950px) {
+        padding-block: 1.3rem;
+    }
+
+    .nav {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding-inline: 8.5%;
+        position: relative;
+
+        .logo {
+            position: relative;
+            height: 1rem;
+            width: 10rem;
+
+            .h_logo {
+                position: relative;
+                visibility: hidden;
+            }
+
+            .m_logo {
+                position: relative;
+                object-fit: cover;
+                background-size: cover;
+                height: 3rem;
+                width: 10rem;
+                z-index: 99;
+                top: -1rem;
+            }
+        }
+
+        #check {
+            display: none; // checkbox set to none for large window size as there is no hamburger
+        }
+
+        @media (max-width : 950px) {
+
+            // hamburger creation for mobile/small devices
+
+            .hamburger {
+                position: absolute;
+                top: -1rem;
+                right: 8%;
+                width: 3rem;
+                height: 3rem;
+                border-radius: 50%;
+                background-color: $bg-color;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                z-index: 10;
+
+                // hamburger bar creation
+
+                .bar {
+                    position: relative;
+                    height: 0.2rem;
+                    width: 2rem;
+                    border-radius: 1rem;
+                    background-color: $text-color;
+
+                    &::after,
+                    &::before {
+                        content: " ";
+                        position: absolute;
+                        width: 60%;
+                        height: 100%;
+                        background-color: inherit;
+                        border-radius: 2px;
+                        left: 50%;
+                        transform: translateX(-50%);
+                    }
+
+                    &::before {
+                        top: -0.5rem;
+                    }
+
+                    &::after {
+                        top: 0.5rem;
+                    }
+                }
+            }
+
+            // checking if hamburger is clicked then create X in replace of 3 lines
+
+            #check:checked~.hamburger {
+
+                .bar {
+                    background-color: $bg-color;
+                    perspective: 1px;
+
+                    &::after {
+                        width: 80%;
+                        left: 0.2rem;
+                        top: 0;
+                        transform: rotateZ(-45deg);
+                        background-color: $text-color;
+                        transition: 100ms all;
+                    }
+
+                    &::before {
+                        width: 80%;
+                        left: 0.2rem;
+                        top: 0;
+                        transform: rotateZ(45deg);
+                        background-color: $text-color;
+                        transition: 100ms all;
+                    }
+                }
+            }
+
+               // checking if hamburger is clicked then show vertical navbar for mobile devices
+
+            #check:checked {
+                ~.nav_items {
+                    height: 60vh;
+
+                    ul {
+                        li {
+                            transform: translateY(0px);
+                        }
+                    }
+                }
+            }
+        }
+
+
+
+
+        // nav creation for large devices
+
+        .nav_items {
+            font-size: 1.2rem;
+            position: relative;
+            transition: 300ms ease;
+
+            @media (max-width : 950px) {
+                //this section is for mobile/small devices to show nav items as vertical bar
+
+                position: absolute;
+                top: 2.3rem;
+                right: 0;
+                width: 40%;
+                height: 0; // to show only when checked
+                overflow: hidden; // hide the nav items elements
+                background-image: linear-gradient(to bottom, rgb(69, 69, 69), rgb(69, 69, 69), rgb(69, 69, 69), rgb(69, 69, 69), rgba(69, 69, 69, 0));
+                border-left: 1px solid $text-color;
+                z-index: 9;
+
+                ul {
+                    display: block;
+                    text-align: center;
+                    flex-direction: column;
+                    justify-content: space-between;
+                    padding-left: 2rem;
+
+                    li {
+                        font-size: 1.3rem;
+                        margin: 1.5rem 0;
+                        transform: translateY(-50px);
+                        transition: 100ms ease;
+                    }
+                }
+            }
+
+
+            //for here creation of nav bar for large devices
+            ul {
+                transform: translateX(-1rem);
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+
+                li {
+                    list-style: none;
+                    padding-inline: 1.5rem;
+                    transition: 200ms all;
+
+                    @media (max-width : 1150px) {
+                        padding-inline: 0.6rem;
+                    }
+
+                    &:hover {
+                        transform: translateY(-2.5px) scale(1.1);
+                    }
+
+                    a {
+                        text-decoration: none;
+                        color: $text-color;
+                        transition: 200ms all;
+
+                        &:hover {
+                            color: $hover-text-color;
+                            text-shadow: 1px 1px 3px black;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    // nav button creation
+
+    .btn {
+        border-style: none;
+        padding: 0.3rem 2rem;
+        font-size: 1.2rem;
+        border-radius: 18px;
+        background-color: $text-color;
+        color: $bg-color;
+        transition: 200ms all;
+
+        &:hover {
+            background-color: $hover-text-color;
+            color: black;
+            box-shadow: rgba(0, 0, 0, 0.593) 0px 5px 50px, rgba(0, 0, 0, 0.259) 0px -12px 30px, rgba(0, 0, 0, 0.302) 0px 4px 6px, rgba(0, 0, 0, 0.333) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+            transform: translateY(-2px) scale(1.05);
+
+        }
+    }
+}
+
+
+// Sticky navbar properties
+
+.sticky {
+    background-color: $bg-color;
+}
+
+.stickyHeader {
+    background-color: $faded-bg-color;
+    box-shadow: rgba(0, 0, 0, 0.45) 0px 25px 20px -20px;
+}
+
+// navbar creation completed
+
+
+
+
+
+
+
+// from here code of image gallery
+
+.img_gallery {
+    width: 100%;
+
+    .heading {
+        color: $text-color;
+        text-align: center;
+        font-size: 5rem;
+        margin-top: 8rem;
+        margin-left: 1rem;
+        width: 95%;
+        transition: 200ms all;
+
+        &:hover {
+            color: $hover-text-color;
+            text-shadow: 1px 1px 20px black;
+            transform: scale(1.02);
+        }
+    }
+
+    .container {
+        position: relative;
+        left: 5%;
+        width: 90%;
+        overflow-x: hidden;
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        grid-template-rows: repeat(3, 1fr);
+        justify-content: center;
+        align-items: center;
+        gap: 30px;
+        padding: 4rem;
+
+
+        .img {
+            object-fit: cover;
+            border-radius: 1rem;
+            position: relative;
+            height: 100%;
+            width: 100%;
+            filter: grayscale(1);
+            transition: 400ms all;
+
+            &:hover {
+                filter: grayscale(0);
+                box-shadow: rgba(0, 0, 0, 0.593) 0px 5px 50px, rgba(0, 0, 0, 0.259) 0px -12px 30px, rgba(0, 0, 0, 0.302) 0px 4px 6px, rgba(0, 0, 0, 0.333) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+                transform: scale(1.02);
+
+            }
+        }
+
+    }
+
+    @media (max-width : 1150px) {
+
+        .heading {
+            margin-top: 6rem;
+            font-size: 4rem;
+        }
+
+        .container {
+            grid-template-columns: repeat(2, 1fr);
+            grid-template-rows: repeat(5, 1fr);
+        }
+    }
+
+    @media (max-width : 768px) {
+
+        .heading {
+            margin-top: 5rem;
+            font-size: 3rem;
+        }
+
+        .container {
+            grid-template-columns: repeat(1, 1fr);
+            grid-template-rows: repeat(9, 1fr);
+        }
+    }
+
+    @media (max-width : 490px) {
+
+        .heading {
+            margin-top: 5rem;
+            font-size: 2rem;
+        }
+
+        .container {
+            grid-template-columns: repeat(1, 1fr);
+            grid-template-rows: repeat(9, 1fr);
+        }
+    }
+}
