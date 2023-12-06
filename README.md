@@ -32,6 +32,8 @@ To run this project locally, follow these steps:
    git clone https://github.com/invtfl-yuvraj/image-gallery.git
 
 2. Navigate to the project directory:
+
+    ```bash 
     cd image-gallery
 3. Open index.html in your preferred web browser.
 
