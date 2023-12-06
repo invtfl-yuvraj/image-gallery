@@ -1,6 +1,3 @@
-My first web development project! 🚀 This responsive Image Gallery Website features a dynamic navigation bar and grayscale-to-color image transitions. Explore and enjoy! 🖼️
-
-
 # Image Gallery Website
 
 Welcome to the Image Gallery Website project! This is my first project using HTML and CSS, showcasing a responsive website with a navigation bar that transforms into a hamburger menu for smaller devices and an image gallery with grayscale images that transition to color on hover.
