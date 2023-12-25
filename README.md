@@ -46,7 +46,7 @@ If you'd like to contribute to this project, please follow these steps:
 3. Make your changes and submit a pull request.
 
 ## Acknowledgement
-1. Thanks to Love Babbar for proving this Project Idea.
+1. Thanks to Love Babbar for provdiing this Project Idea.
 2. Images used is this project are provided by Love Babbar in his Web Development Bootcamp [MERN STACK] course.
 
 Although I build this whole project myself from scratch after learning the concepts.
